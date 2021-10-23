@@ -31,4 +31,15 @@ class Credentials:
         delete_credential method deletes a saved credential from the credential_list
         '''
 
-        Credentials.credential_list.remove(self)      
+        Credentials.credential_list.remove(self) 
+
+        @classmethod
+    def check_user(cls,user_name,password):
+        '''
+        Method that checks if the name and password entered exist in the users_list
+        '''
+        current_user = ''
+        for user in User.user_list:
+        	if (user.user_name == user_name and user.password == password):
+        		current_user = user.user_name
+        return current_user     
