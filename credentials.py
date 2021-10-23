@@ -58,16 +58,27 @@ class Credentials:
             if credential.account_name == account_name:
                 return credential
   
-  @classmethod
-    def find_by_account_name(cls, account_name):
+      @classmethod
+    def credential_exist(cls, account_name):
         '''
-        Method that takes in a account_name and returns a credential that matches that account_name.
+        Method that checks if a credential exists from the credential list.
         Args:
-            account_name: Phone account_name to search for
+            account_name:  account_name to search if it exists
         Returns :
-            Credential of person that matches the account_name.
+            Boolean: True or false depending if the credential exists
         '''
-
         for credential in cls.credential_list:
             if credential.account_name == account_name:
-                return credential
+                return True
+
+        return False
+
+
+    @classmethod
+    def display_credentials(cls):
+        '''
+        Method to display the list of credentials saved.
+        '''
+        return cls.credential_list
+
+    
