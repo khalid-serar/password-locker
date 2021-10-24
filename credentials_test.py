@@ -12,14 +12,14 @@ class TestCredentials(unittest.TestCase):
         Set up method to run before each test cases.
         '''
         
-        self.new_credential = Credentials('Maalim','Facebook','234567')
+        self.new_credential = Credentials('khalid','Facebook','234567')
         
     def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_credential.user_name,"Maalim")
+        self.assertEqual(self.new_credential.user_name,"khalid")
         self.assertEqual(self.new_credential.account_name,"Facebook")
         self.assertEqual(self.new_credential.password,"234567")
     
@@ -36,7 +36,7 @@ class TestCredentials(unittest.TestCase):
         test_delete_credential to test if we can remove a credential from our credential list
         '''
         self.new_credential.save_credentials()
-        test_credential = Credentials("Maalim","Facebook","234567") # new credential
+        test_credential = Credentials("khalid","Facebook","234567") # new credential
         test_credential.save_credentials()
 
         self.new_credential.delete_credentials()# Deleting a credential object
@@ -48,7 +48,7 @@ class TestCredentials(unittest.TestCase):
             objects to our credential_list
             '''
             self.new_credential.save_credentials()
-            test_credential = Credentials("Maalim","Facebook","2345678") # new credential
+            test_credential = Credentials("khalid","Facebook","2345678") # new credential
             test_credential.save_credentials()
             self.assertEqual(len(Credentials.credential_list),9)
 
@@ -65,7 +65,7 @@ class TestCredentials(unittest.TestCase):
         '''
 
         self.new_credential.save_credentials()
-        test_credential = Credentials("Maalim","Facebook","234567") # new credential
+        test_credential = Credentials("khalid","Facebook","234567") # new credential
         test_credential.save_credentials()
 
         found_credential = Credentials.find_by_account_name("Facebook")
@@ -79,7 +79,7 @@ class TestCredentials(unittest.TestCase):
             '''
 
             self.new_credential.save_credentials()
-            test_credential = Credentials("Maalim","Facebook","234567") # new credential
+            test_credential = Credentials("khalid","Facebook","234567") # new credential
             test_credential.save_credentials()
 
             credential_exists = Credentials.credential_exist("Facebook")
