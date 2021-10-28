@@ -43,14 +43,14 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(len(Credentials.credential_list),4)
     
     def test_save_multiple_credential(self):
-            '''
-            test_save_multiple_credential to check if we can save multiple credentials
-            objects to our credential_list
-            '''
-            self.new_credential.save_credentials()
-            test_credential = Credentials("khalid","Facebook","2345678") # new credential
-            test_credential.save_credentials()
-            self.assertEqual(len(Credentials.credential_list),9)
+        '''
+        test_save_multiple_credential to check if we can save multiple credentials
+        objects to our credential_list
+        '''
+        self.new_credential.save_credentials()
+        test_credential = Credentials("khalid","Facebook","2345678") # new credential
+        test_credential.save_credentials()
+        self.assertEqual(len(Credentials.credential_list),9)
 
     def test_display_all_credentials(self):
         '''
@@ -74,17 +74,17 @@ class TestCredentials(unittest.TestCase):
             
             
     def test_credential_exists(self):
-            '''
-            test to check if we can return a Boolean  if we cannot find the credential.
-            '''
+        '''
+        test to check if we can return a Boolean  if we cannot find the credential.
+        '''
 
-            self.new_credential.save_credentials()
-            test_credential = Credentials("khalid","Facebook","234567") # new credential
-            test_credential.save_credentials()
+        self.new_credential.save_credentials()
+        test_credential = Credentials("khalid","Facebook","234567") # new credential
+        test_credential.save_credentials()
 
-            credential_exists = Credentials.credential_exist("Facebook")
+        credential_exists = Credentials.credential_exist("Facebook")
 
-            self.assertTrue(credential_exists)
+        self.assertTrue(credential_exists)
     
     def test_copy_account_name(self):
         '''

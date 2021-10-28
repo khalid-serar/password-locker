@@ -10,7 +10,7 @@ class Credentials:
     
     credential_list = []
     
-     def __init__(self,user_name,account_name,password):
+    def __init__(self,user_name,account_name,password):
         '''
         Method to define the properties for each user object.
         '''
@@ -19,7 +19,7 @@ class Credentials:
         self.password = password
 
 
-        def save_credentials(self):
+    def save_credentials(self):
         '''
         A method that saves new user object
         '''
@@ -32,7 +32,7 @@ class Credentials:
 
         Credentials.credential_list.remove(self) 
 
-        @classmethod
+    @classmethod
     def check_user(cls,user_name,password):
         '''
         Method that checks if the name and password entered exist in the users_list
@@ -43,7 +43,7 @@ class Credentials:
         		current_user = user.user_name
         return current_user   
 
-        @classmethod
+    @classmethod
     def find_by_account_name(cls, account_name):
         '''
         Method that takes in a account_name and returns a credential that matches that account_name.
@@ -57,7 +57,7 @@ class Credentials:
             if credential.account_name == account_name:
                 return credential
   
-      @classmethod
+    @classmethod
     def credential_exist(cls, account_name):
         '''
         Method that checks if a credential exists from the credential list.

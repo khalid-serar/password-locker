@@ -4,7 +4,6 @@ from credentials import Credentials
 import random 
 import string  
 
-
 def create_user(user_name,password):
     '''
     Function to create new user
